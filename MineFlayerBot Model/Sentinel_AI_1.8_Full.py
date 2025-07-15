@@ -156,9 +156,9 @@ const armorManager = require('mineflayer-armor-manager')
 const Vec3 = require('vec3')
 
 const bot = mineflayer.createBot({
-  host: 'cuberazi.aternos.me',
+  host: 'IP',
   port: 25565,
-  username: 'Claude',
+  username: 'Skull',
   version: '1.20.1'
 })
 
