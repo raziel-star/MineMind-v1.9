@@ -1,146 +1,149 @@
-
-
-
 ChatGPT said:
 markdown
 Copy
 Edit
-# Minecraft AI Command Bot
+# Claude the Minecraft AI Bot 🤖🧠
 
-A Minecraft bot that understands and executes Hebrew natural language commands using a custom-trained neural network. The bot connects to a Minecraft server, listens to chat messages, and performs in-game actions such as moving, digging, fighting zombies, and managing inventory — all controlled by user commands processed through machine learning.
-
----
-
-## Features
-
-- **Hebrew Natural Language Processing:** Tokenizes and understands Hebrew commands using a neural network built with PyTorch.
-- **Custom Command Learning:** Allows live learning of new commands directly from Minecraft chat.
-- **Minecraft Automation:** Controls the bot with Mineflayer and plugins for pathfinding, PvP combat, and armor management.
-- **PvP & Mob Fighting:** Automatically detects and attacks hostile mobs like zombies.
-- **Inventory & Armor Management:** Automatically equips armor and collects nearby items.
-- **Real-time JS Command Execution:** The Python AI process sends JavaScript commands to the bot in real-time.
-- **Easy Extensibility:** Add or modify commands with corresponding JavaScript snippets.
+Claude is an intelligent Minecraft bot that listens to chat messages in real time, understands Hebrew commands using a lightweight neural network, and performs actions automatically in-game using Mineflayer.
 
 ---
 
-## Requirements
+## 🧩 Features
 
-- **Python 3.8+**
-- **Node.js 16+**
-- **Minecraft Java Edition server access** (can be local or public)
-- Python packages:
-  - `torch`
-  - `nltk`
-- Node.js packages:
-  - `mineflayer`
-  - `mineflayer-pathfinder`
-  - `mineflayer-pvp`
-  - `mineflayer-armor-manager`
+- 💬 Understands Hebrew commands (e.g., "תן עץ", "קפוץ 3 פעמים")
+- 🧠 Powered by a custom AI model (PyTorch + NLTK)
+- 🛠️ Learns new commands dynamically from chat
+- ⚔️ Auto PvP: Attacks nearby zombies
+- 🧥 Automatically equips armor after collection
+- 🎮 Compatible with Minecraft 1.20.1 servers
 
 ---
 
-## Setup Instructions
+## 📦 Requirements
 
-### 1. Clone this repository
+### Python (for the AI model)
+- Python 3.9+
+- `torch`
+- `nltk`
 
+Install dependencies:
 ```bash
-git clone <repository-url>
-cd <repository-folder>
-2. Install Python dependencies
-bash
-Copy
-Edit
 pip install torch nltk
-Note: You may need to install PyTorch following instructions from https://pytorch.org for your OS and CUDA support.
+Node.js (for the bot)
+Node.js 18+
 
-3. Install Node.js dependencies
+Mineflayer and plugins
+
+Install Node.js packages:
+
 bash
 Copy
 Edit
-npm install mineflayer mineflayer-pathfinder mineflayer-pvp mineflayer-armor-manager vec3
-4. Configure Minecraft server connection
-Edit the generate_bot_js() function in the Python script to set your Minecraft server host, port, username, and Minecraft version.
-
-Example:
-
-js
+npm install mineflayer mineflayer-pvp mineflayer-pathfinder mineflayer-armor-manager vec3
+🚀 Getting Started
+1. Clone the project
+bash
 Copy
 Edit
-const bot = mineflayer.createBot({
-  host: 'your.server.address',
-  port: 25565,
-  username: 'BotUsername',
-  version: '1.20.1'
-})
-Running the Bot
-Run the main Python script:
+git clone https://github.com/YOUR_USERNAME/Claude-Minecraft-Bot.git
+cd Claude-Minecraft-Bot
+2. Run the Python bot
+The Python script handles the AI logic and starts the JavaScript bot:
 
 bash
 Copy
 Edit
 python main.py
-The script will:
+This will:
 
-Load or train the AI command model.
+Load or train the AI model
 
-Generate the bot JavaScript file (bot.js).
+Generate bot.js
 
-Launch the Minecraft bot process (node bot.js).
+Launch the Mineflayer bot
 
-Listen to Minecraft chat messages and send commands to the bot accordingly.
+Start listening to chat and controlling the bot
 
-Using the Bot
-Commands
-Send Hebrew chat messages in Minecraft to control the bot.
+🧠 Teaching New Commands In-Game
+You can add new commands directly from Minecraft chat!
 
-Commands can be simple phrases like "לך קדימה" (move forward), "קפוץ" (jump), or "הפעל יצירתיות" (enable creative mode).
-
-The AI will try to recognize and execute matching commands automatically.
-
-Teaching New Commands
-You can teach the bot new commands on the fly by typing in Minecraft chat:
-
-php-template
+Syntax:
+diff
 Copy
 Edit
-!למד פקודה | <command text> | <JavaScript code>
-For example:
-
+!למד פקודה | משפט בעברית | קודJS
+Example:
 bash
 Copy
 Edit
-!למד פקודה | ברך | bot.chat('שלום חבר!');
-The bot will learn this new command and be able to execute it next time you send the phrase "ברך".
+!למד פקודה | תן חרב | bot.chat('/give @p diamond_sword');
+✅ The bot will respond: למדתי את הפקודה: תן חרב
+✅ The AI is retrained instantly and saves the data.
 
-Manual Control (Python Console)
-You can also type commands directly into the Python console. The AI will parse and send the corresponding JavaScript commands to the bot.
+💬 Command Usage
+Example Message	What the Bot Does
+!תן עץ	Runs /give @p minecraft:oak_log 64
+קפוץ 5 פעמים	Jumps 5 times
+תעוף	Sends /fly
+חפור קדימה	Digs the block in front
+!רקוד	Performs a little dance
 
-Type exit to stop the bot.
+Use ! to force a command
+Use plain Hebrew text to let the AI decide silently
 
-How It Works
-The Python script runs a PyTorch neural network trained to classify Hebrew input phrases into command labels.
+🧟‍♂️ Auto PvP (Zombie Mode)
+Upon spawning, the bot automatically:
 
-Each label corresponds to a JavaScript snippet that controls the Minecraft bot.
+Equips armor
 
-The bot runs with Mineflayer and plugins for navigation, PvP, and armor management.
+Scans for nearby zombies every second
 
-The bot listens to chat and standard input, executing JavaScript commands it receives.
+Attacks them with mineflayer-pvp
 
-The Python process acts as the AI brain and command dispatcher.
+Useful commands in chat:
+arduino
+Copy
+Edit
+health     ➜ shows HP
+equip      ➜ wears any collected armor
+stop       ➜ stops attacking
+📁 File Structure
+bash
+Copy
+Edit
+main.py                # AI + Bot launcher
+bot.js                 # Generated bot code (do not edit manually)
+learned_ai.json        # Saved AI examples and commands
+🛠 Tips
+To restart learning, delete learned_ai.json
 
-Troubleshooting
-Make sure your Minecraft server is reachable and the connection details in generate_bot_js() are correct.
+You can send commands directly in the Python terminal
 
-Verify Python and Node.js dependencies are installed properly.
+The AI uses bag-of-words, so keep commands consistent in phrasing
 
-If the bot does not respond, check the console logs for errors.
+🔒 Notes
+Bot connects to public Minecraft servers (cracked or local)
 
-Adjust the AI confidence threshold or add more training examples if commands are not recognized reliably.
+Make sure the username is not already used in the server
 
-License
-MIT License
+Customize host/port in bot.js or main.py
 
-Acknowledgments
-Mineflayer for Minecraft bot API
+💡 Example Additions
+Build a Tower Command:
+javascript
+Copy
+Edit
+!למד פקודה | בנה מגדל | 
+let pos = bot.entity.position.offset(0, 0, 1);
+for (let i = 0; i < 5; i++) {
+  setTimeout(() => {
+    bot.placeBlock(bot.blockAt(pos.offset(0, i - 1, 0)), vec3(0, 1, 0));
+  }, i * 500);
+}
+🤖 Author
+Created by Raziel24
+Hebrew AI + Minecraft Bot Automation
+Contributions welcome!
 
-PyTorch and NLTK for ML and NLP utilities
+📜 License
+MIT License – use it, modify it, share it.
