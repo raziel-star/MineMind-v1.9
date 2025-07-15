@@ -2,9 +2,9 @@ ChatGPT said:
 markdown
 Copy
 Edit
-# Skull-v1.9 the Minecraft AI Bot 🤖🧠
+# iSparkton-v1.9 the Minecraft AI Bot 🤖🧠
 
-Claude is an intelligent Minecraft bot that listens to chat messages in real time, understands Hebrew commands using a lightweight neural network, and performs actions automatically in-game using Mineflayer.
+iSparkton is an intelligent Minecraft bot that listens to chat messages in real time, understands Hebrew commands using a lightweight neural network, and performs actions automatically in-game using Mineflayer.
 
 ---
 
@@ -45,7 +45,7 @@ npm install mineflayer mineflayer-pvp mineflayer-pathfinder mineflayer-armor-man
 bash
 Copy
 Edit
-git clone https://github.com/YOUR_USERNAME/Claude-Minecraft-Bot.git
+git clone https://github.com/raziel-star/MineMind-v1.9.git
 cd Claude-Minecraft-Bot
 2. Run the Python bot
 The Python script handles the AI logic and starts the JavaScript bot:
