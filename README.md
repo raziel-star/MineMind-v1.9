@@ -2,7 +2,7 @@ ChatGPT said:
 markdown
 Copy
 Edit
-# Claude-v1.9 the Minecraft AI Bot 🤖🧠
+# Skull-v1.9 the Minecraft AI Bot 🤖🧠
 
 Claude is an intelligent Minecraft bot that listens to chat messages in real time, understands Hebrew commands using a lightweight neural network, and performs actions automatically in-game using Mineflayer.
 
