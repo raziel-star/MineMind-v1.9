@@ -2,9 +2,9 @@ ChatGPT said:
 markdown
 Copy
 Edit
-# iSparkton-v1.9 the Minecraft AI Bot 🤖🧠
+# Claude-v1.9 the Minecraft AI Bot 🤖🧠
 
-iSparkton is an intelligent Minecraft bot that listens to chat messages in real time, understands Hebrew commands using a lightweight neural network, and performs actions automatically in-game using Mineflayer.
+Claude is an intelligent Minecraft bot that listens to chat messages in real time, understands Hebrew commands using a lightweight neural network, and performs actions automatically in-game using Mineflayer.
 
 ---
 
